@@ -4,92 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohamed Fares | M.FARES Portfolio</title>
-    <link rel="stylesheet" href="style.css">
     <style>
-        /* إضافة ستايل إضافي لضمان تناسق الألوان مع التصميم الحالي */
+        /* ستايل مخصص لضمان ظهور الكود بشكل سليم */
         :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
             --accent-blue: #38bdf8;
             --accent-purple: #bb86fc;
         }
-        .icon-container.dark-icon {
-            background: rgba(187, 134, 252, 0.1);
-            color: var(--accent-purple);
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
         }
-        .icon-container.yt-icon {
-            background: rgba(255, 0, 0, 0.1);
-            color: #ff0000;
-        }
+        .container { max-width: 1100px; margin: auto; padding: 20px; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
+        .logo { color: var(--accent-blue); font-weight: bold; font-size: 24px; text-decoration: none; }
+        .hero { text-align: center; padding: 60px 0; }
+        .main-title { font-size: 3rem; margin-bottom: 10px; }
+        .subtitle { color: #94a3b8; font-size: 1.1rem; max-width: 700px; margin: auto; }
+        .highlight { color: var(--accent-blue); font-weight: bold; }
+        .scripts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-top: 40px; }
+        .script-card { background: var(--card-bg); border-radius: 16px; padding: 25px; border: 1px solid #334155; position: relative; }
+        .status-badge { position: absolute; top: 20px; left: 20px; background: rgba(56, 189, 248, 0.1); color: var(--accent-blue); padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: bold; }
+        .script-title { font-size: 1.5rem; margin: 40px 0 10px 0; }
+        .script-description { color: #94a3b8; font-size: 0.95rem; margin-bottom: 20px; }
+        .features-list { list-style: none; padding: 0; margin-bottom: 25px; }
+        .features-list li { margin-bottom: 8px; font-size: 0.9rem; color: #cbd5e1; }
+        .install-btn { display: block; width: 100%; background: #ffffff; color: #000000; text-align: center; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        .install-btn:hover { background: var(--accent-blue); color: white; }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="header-content">
-            <span class="badge">Developer Portfolio</span>
-            <h1 class="logo">M.FARES</h1>
-        </div>
-    </header>
+    <div class="container">
+        <header>
+            <div class="logo">M.FARES</div>
+            <div style="background: rgba(56, 189, 248, 0.1); padding: 5px 15px; border-radius: 20px; font-size: 12px; color: var(--accent-blue);">Developer Portfolio</div>
+        </header>
 
-    <main class="container">
         <section class="hero">
-            <h2 class="main-title">Mohamed Fares</h2>
+            <h1 class="main-title">Mohamed Fares</h1>
             <p class="subtitle">
-                مرحباً بك في مستودع الأدوات الذكية. هنا تجد سكريبتات مطورة خصيصاً لتحسين الإنتاجية وتجربة المستخدم 
-                عبر إضافة <span class="highlight">Tampermonkey</span>.
+                مرحباً بك في مستودع الأدوات الذكية. هنا تجد سكريبتات مطورة خصيصاً لتحسين الإنتاجية وتجربة المستخدم عبر إضافة <span class="highlight">Tampermonkey</span>.
             </p>
-            <div class="divider"></div>
         </section>
 
-        <section class="scripts-grid">
+        <div class="scripts-grid">
             <!-- المشروع الأول: Super Dark Mode Pro -->
-            <div class="script-card active">
-                <div class="card-header">
-                    <div class="status-badge">ACTIVE</div>
-                    <div class="icon-container dark-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                        </svg>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <h3 class="script-title">Super Dark Mode Pro</h3>
-                    <p class="script-description">تحويل ذكي لجميع المواقع إلى الوضع الليلي مع حماية متكاملة للعين وتصفح مريح تماماً.</p>
-                    <ul class="features-list">
-                        <li><span class="bullet">🔹</span> وضع ليلي ذكي وتلقائي</li>
-                        <li><span class="bullet">🔹</span> الحفاظ على ألوان الصور الأصلية</li>
-                        <li><span class="bullet">🔹</span> حماية العين أثناء العمل الطويل</li>
-                    </ul>
-                    <a href="https://greasyfork.org/ar/scripts/523412-super-dark-mode-pro" target="_blank" class="install-btn">Install Script</a>
-                </div>
+            <div class="script-card">
+                <div class="status-badge">ACTIVE</div>
+                <h3 class="script-title">Super Dark Mode Pro</h3>
+                <p class="script-description">تحويل ذكي لجميع المواقع إلى الوضع الليلي مع حماية متكاملة للعين وتصفح مريح تماماً.</p>
+                <ul class="features-list">
+                    <li>🔹 وضع ليلي ذكي وتلقائي</li>
+                    <li>🔹 الحفاظ على ألوان الصور الأصلية</li>
+                    <li>🔹 حماية العين أثناء العمل الطويل</li>
+                </ul>
+                <a href="https://greasyfork.org/ar/scripts/523412-super-dark-mode-pro" target="_blank" class="install-btn">Install Script</a>
             </div>
 
             <!-- المشروع الثاني: YouTube Ad-Skipper Pro -->
-            <div class="script-card active">
-                <div class="card-header">
-                    <div class="status-badge">ACTIVE</div>
-                    <div class="icon-container yt-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
-                        </svg>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <h3 class="script-title">YouTube Ad-Skipper Pro</h3>
-                    <p class="script-description">تخطي آلي لجميع أنواع الإعلانات مع إخفاء البنرات المزعجة لضمان مشاهدة متواصلة.</p>
-                    <ul class="features-list">
-                        <li><span class="bullet">🔹</span> تخطي فوري (Instant Skip)</li>
-                        <li><span class="bullet">🔹</span> متوافق مع تحديثات 2026</li>
-                        <li><span class="bullet">🔹</span> حماية الخصوصية (No Tracking)</li>
-                    </ul>
-                    <a href="https://github.com/mohamedmahmoud123726-ux/YouTube-Ad-Skipper-Pro" target="_blank" class="install-btn">Install Script</a>
-                </div>
+            <div class="script-card">
+                <div class="status-badge">ACTIVE</div>
+                <h3 class="script-title">YouTube Ad-Skipper Pro</h3>
+                <p class="script-description">تخطي آلي لجميع أنواع الإعلانات مع إخفاء البنرات المزعجة لضمان مشاهدة متواصلة.</p>
+                <ul class="features-list">
+                    <li>🔹 تخطي فوري (Instant Skip)</li>
+                    <li>🔹 متوافق مع تحديثات 2026</li>
+                    <li>🔹 حماية الخصوصية (No Tracking)</li>
+                </ul>
+                <a href="#" class="install-btn">Install Script</a>
             </div>
-        </section>
-    </main>
+        </div>
 
-    <footer style="text-align: center; margin-top: 50px; padding: 20px; color: #64748b;">
-        <p>تطوير محمد فارس &copy; 2026 - جميع الحقوق محفوظة</p>
-    </footer>
+        <footer style="text-align: center; margin-top: 80px; color: #64748b; font-size: 0.9rem;">
+            تطوير محمد فارس &copy; 2026 - جميع الحقوق محفوظة
+        </footer>
+    </div>
 
 </body>
 </html>
