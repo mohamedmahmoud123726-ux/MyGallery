@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohamed Fares | M.FARES Portfolio</title>
     <style>
-        /* التنسيقات الأساسية - Noir Vibe */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            background-color: #010409; /* اللون الأسود بتاع صورك */
+            background-color: #010409;
             color: #f8fafc;
             font-family: 'Segoe UI', Tahoma, sans-serif;
             padding: 40px 20px;
@@ -24,7 +23,7 @@
             padding-bottom: 20px;
         }
         .logo { color: #00bcd4; font-weight: bold; font-size: 22px; text-decoration: none; text-transform: uppercase; letter-spacing: 2px; }
-        .tagline { color: #8b949e; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
+        .tagline { color: #8b949e; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
         
         .hero { text-align: center; margin-bottom: 80px; }
         .main-title { font-size: 3.5rem; font-weight: bold; margin-bottom: 20px; color: #fff; }
@@ -75,6 +74,7 @@
             width: fit-content;
         }
 
+        .stats { font-size: 12px; color: #3fb950; margin-bottom: 10px; font-weight: bold; }
         .card-title { font-size: 20px; color: #fff; margin-bottom: 12px; }
         .card-desc { color: #8b949e; font-size: 14px; margin-bottom: 25px; flex-grow: 1; line-height: 1.6; }
         
@@ -91,12 +91,14 @@
         }
         .btn:hover { background: #fff; box-shadow: 0 0 15px rgba(0, 188, 212, 0.5); }
         
-        .instruction-list { text-align: right; color: #8b949e; font-size: 14px; list-style: decimal inside; }
-        .instruction-list li { margin-bottom: 10px; }
+        /* روابط سريعة للفوتر */
+        .quick-links { text-align: center; margin-top: 40px; }
+        .quick-links a { color: #00bcd4; text-decoration: none; margin: 0 15px; font-size: 14px; transition: 0.3s; }
+        .quick-links a:hover { color: #fff; }
 
         footer { 
             text-align: center; 
-            margin-top: 80px; 
+            margin-top: 50px; 
             padding: 30px; 
             color: #484f58; 
             font-size: 12px;
@@ -114,51 +116,50 @@
 
         <section class="hero">
             <h1 class="main-title">Mohamed <span>Fares</span></h1>
-            <p class="subtitle">
-                مستودع أدوات الأتمتة المتقدمة والسكريبتات المخصصة. نركز على تحسين أداء الويب وتجربة المستخدم عبر إضافة Tampermonkey.
-            </p>
+            <p class="subtitle">مستودع أدوات الأتمتة المتقدمة. حلول ذكية لتجاوز القيود وتحسين تجربة المستخدم عبر Tampermonkey.</p>
         </section>
 
-        <div class="section-title">إعدادات التشغيل (Setup)</div>
+        <div class="section-title">إعدادات التشغيل</div>
         <div class="scripts-grid">
             <div class="card">
                 <div class="badge">الخطوة 1</div>
                 <h3 class="card-title">تحميل Tampermonkey</h3>
-                <p class="card-desc">يجب تثبيت إضافة Tampermonkey على متصفحك أولاً لتتمكن من تشغيل أي سكريبت من هذا المعرض.</p>
-                <a href="https://www.tampermonkey.net/" target="_blank" class="btn">تحميل الإضافة الآن</a>
+                <p class="card-desc">الإضافة الأساسية لتشغيل سكريبتات الأتمتة على متصفحك.</p>
+                <a href="https://www.tampermonkey.net/" target="_blank" class="btn">تحميل الإضافة</a>
             </div>
-
             <div class="card">
                 <div class="badge">الخطوة 2</div>
-                <h3 class="card-title">طريقة الاستخدام</h3>
-                <ol class="instruction-list">
-                    <li>قم بتثبيت الإضافة من الكارت المجاور.</li>
-                    <li>اختر السكريبت المطلوب من قسم "المشاريع" بالأسفل.</li>
-                    <li>اضغط على زر التثبيت وسيتم تفعيل السكريبت تلقائياً.</li>
-                </ol>
+                <h3 class="card-title">طريقة التثبيت</h3>
+                <p class="card-desc">بعد تثبيت الإضافة، اضغط على "تثبيت الآن" تحت أي مشروع بالأسفل، ثم أكد التثبيت في الصفحة التي ستفتح لك.</p>
             </div>
         </div>
 
-        <div class="section-title">المشاريع الجارية (Active Projects)</div>
-        
+        <div class="section-title">مشاريع M.FARES الجارية</div>
         <div class="scripts-grid">
             <div class="card">
+                <div class="stats">● +1,700 Installs</div>
                 <div class="badge">Updated V2.1</div>
                 <h3 class="card-title">YouTube Ad-Skipper Pro</h3>
-                <p class="card-desc">تجاوز إعلانات يوتيوب تلقائياً مع ميزة التسريع 16x للإعلانات غير القابلة للتخطي. تم التحديث ليتوافق مع أنظمة 2026.</p>
-                <a href="https://greasyfork.org/scripts/576160/code/script.user.js" target="_blank" class="btn">تحديث السكريبت</a>
+                <p class="card-desc">تجاوز إعلانات يوتيوب تلقائياً مع تسريع الإعلانات غير القابلة للتخطي 16x. محدث بالكامل لعام 2026.</p>
+                <a href="https://greasyfork.org/scripts/576160/code/script.user.js" target="_blank" class="btn">تثبيت السكريبت</a>
             </div>
-
             <div class="card">
+                <div class="stats">● Stable Version</div>
                 <div class="badge">Stable</div>
                 <h3 class="card-title">Super Dark Mode Pro</h3>
-                <p class="card-desc">حماية العين المتكاملة لجميع المواقع مع الحفاظ على سرعة التصفح ودقة الألوان الأصلية.</p>
+                <p class="card-desc">تحويل جميع المواقع للوضع الليلي بشكل ذكي يحافظ على سرعة التصفح وراحة العين.</p>
                 <a href="https://greasyfork.org/scripts/576267/code/script.user.js" target="_blank" class="btn">تثبيت الآن</a>
             </div>
         </div>
 
+        <div class="quick-links">
+            <a href="https://facebook.com">Facebook</a>
+            <a href="https://github.com">GitHub</a>
+            <a href="mailto:contact@mfares.com">Report a Bug</a>
+        </div>
+
         <footer>
-            M.FARES &copy; 2026 | Built for Performance and Privacy
+            M.FARES © 2026 | Developed for Professional Use
         </footer>
     </div>
 
