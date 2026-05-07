@@ -1,49 +1,52 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M.FARES | معرض السكريبتات</title>
+    <title>M.FARES | Scripts Repository</title>
     <style>
-        /* التنسيق الأساسي اللي كان في الصورة المنظمة */
+        /* Modern Noir UI - Organized & Clean */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             background-color: #010409;
             color: #f8fafc;
             font-family: 'Segoe UI', Tahoma, sans-serif;
             padding: 50px 20px;
+            line-height: 1.6;
         }
         .container { max-width: 1000px; margin: auto; }
         
-        /* الهيدر */
+        /* Header Section */
         header { 
             display: flex; 
             justify-content: space-between; 
             align-items: center; 
             margin-bottom: 80px;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 20px;
         }
-        .logo { color: #00bcd4; font-weight: bold; font-size: 22px; text-decoration: none; text-transform: uppercase; }
-        .tagline { color: #8b949e; font-size: 11px; text-transform: uppercase; }
+        .logo { color: #00bcd4; font-weight: bold; font-size: 22px; text-decoration: none; text-transform: uppercase; letter-spacing: 2px; }
+        .tagline { color: #8b949e; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
         
-        /* العنوان الرئيسي */
+        /* Hero Section */
         .hero { text-align: center; margin-bottom: 80px; }
-        .main-title { font-size: 3.5rem; font-weight: bold; margin-bottom: 20px; }
+        .main-title { font-size: 3.5rem; font-weight: bold; margin-bottom: 20px; color: #fff; }
         .main-title span { color: #00bcd4; }
-        .subtitle { color: #8b949e; font-size: 1.1rem; max-width: 700px; margin: auto; line-height: 1.6; }
+        .subtitle { color: #8b949e; font-size: 1.1rem; max-width: 700px; margin: auto; }
         
-        /* العناوين الجانبية المنظمة */
+        /* Section Titles */
         .section-title { 
             display: flex;
             align-items: center;
             margin-bottom: 30px;
             font-size: 22px;
             font-weight: bold;
-            border-right: 4px solid #00bcd4;
-            padding-right: 15px;
+            border-left: 4px solid #00bcd4;
+            padding-left: 15px;
             color: #fff;
         }
 
-        /* شبكة الكروت */
+        /* Grid Layout */
         .grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
@@ -51,16 +54,19 @@
             margin-bottom: 60px;
         }
         
-        /* تصميم الكارت النظيف (زي الصور اللي كانت عجباك) */
+        /* Clean Card Design */
         .card { 
             background: #0d1117; 
             border-radius: 12px; 
             padding: 30px; 
             border: 1px solid #30363d; 
-            text-align: right;
-            transition: 0.3s;
+            text-align: left;
+            transition: 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
-        .card:hover { border-color: #00bcd4; }
+        .card:hover { border-color: #00bcd4; transform: translateY(-5px); }
         
         .badge { 
             background: rgba(0, 188, 212, 0.1); 
@@ -71,12 +77,13 @@
             font-weight: bold;
             margin-bottom: 15px;
             display: inline-block;
+            text-transform: uppercase;
         }
 
         .card-title { font-size: 20px; color: #fff; margin-bottom: 10px; }
-        .card-desc { color: #8b949e; font-size: 14px; margin-bottom: 25px; line-height: 1.6; min-height: 50px; }
+        .card-desc { color: #8b949e; font-size: 14px; margin-bottom: 25px; min-height: 60px; }
         
-        /* الزرار الاحترافي */
+        /* Professional Buttons */
         .btn { 
             display: block; 
             background: #00bcd4; 
@@ -87,15 +94,16 @@
             text-decoration: none; 
             font-weight: bold; 
             font-size: 15px;
+            transition: 0.2s;
         }
-        .btn:hover { background: #fff; }
+        .btn:hover { background: #fff; box-shadow: 0 0 15px rgba(0, 188, 212, 0.4); }
         .btn-outline { background: transparent; border: 1px solid #30363d; color: #8b949e; }
         .btn-outline:hover { border-color: #00bcd4; color: #00bcd4; }
 
         footer { 
             text-align: center; 
             margin-top: 100px; 
-            padding: 20px; 
+            padding: 30px; 
             color: #484f58; 
             font-size: 12px;
             border-top: 1px solid #30363d;
@@ -106,44 +114,44 @@
 
     <div class="container">
         <header>
-            <div class="tagline">Automation & Security Specialist</div>
             <a href="#" class="logo">M.FARES</a>
+            <div class="tagline">Automation & Security Specialist</div>
         </header>
 
         <section class="hero">
             <h1 class="main-title">Mohamed <span>Fares</span></h1>
-            <p class="subtitle">مستودع الأدوات الذكية المتقدمة. نركز على حل المشاكل البرمجية المعقدة وتحسين تجربة المستخدم عبر Tampermonkey.</p>
+            <p class="subtitle">Advanced automation tools repository. Solving complex web issues and enhancing user experience via custom Tampermonkey scripts.</p>
         </section>
 
-        <div class="section-title">دليل التشغيل السريع</div>
+        <div class="section-title">Quick Setup Guide</div>
         <div class="grid">
             <div class="card">
-                <div class="badge">الخطوة الأولى</div>
-                <h3 class="card-title">تحميل المحرك</h3>
-                <p class="card-desc">تحميل إضافة Tampermonkey لتشغيل الأكواد على متصفحك.</p>
-                <a href="https://www.tampermonkey.net/" target="_blank" class="btn btn-outline">انقر للتحميل ←</a>
+                <div class="badge">Step 1</div>
+                <h3 class="card-title">Install Engine</h3>
+                <p class="card-desc">Download Tampermonkey extension to run these scripts on your browser.</p>
+                <a href="https://www.tampermonkey.net/" target="_blank" class="btn btn-outline">Download Now →</a>
             </div>
             <div class="card">
-                <div class="badge">الخطوة الثانية</div>
-                <h3 class="card-title">تفعيل السكريبت</h3>
-                <p class="card-desc">بعد تثبيت الإضافة، اختر السكريبت من الأسفل واضغط تثبيت ليعمل تلقائياً.</p>
+                <div class="badge">Step 2</div>
+                <h3 class="card-title">Activate Scripts</h3>
+                <p class="card-desc">Choose a project from below, click install, and it will run automatically.</p>
             </div>
         </div>
 
-        <div class="section-title">المشاريع الجارية (Active Projects)</div>
+        <div class="section-title">Active Projects</div>
         <div class="grid">
             <div class="card">
-                <div class="badge">UPDATED V2.1</div>
+                <div class="badge">Updated V2.1</div>
                 <h3 class="card-title">YouTube Ad-Skipper Pro</h3>
-                <p class="card-desc">تجاوز إعلانات يوتيوب تلقائياً مع تسريع الإعلانات غير القابلة للتخطي 16x. محدث بالكامل لعام 2026.</p>
-                <a href="https://greasyfork.org/scripts/576160/code/script.user.js" target="_blank" class="btn">تثبيت السكريبت</a>
+                <p class="card-desc">Auto-skips ads and speeds up unskippable segments by 16x. Fully optimized for 2026 updates.</p>
+                <a href="https://greasyfork.org/scripts/576160/code/script.user.js" target="_blank" class="btn">Update Script</a>
             </div>
 
             <div class="card">
                 <div class="badge">STABLE</div>
                 <h3 class="card-title">Super Dark Mode Pro</h3>
-                <p class="card-desc">تحويل جميع المواقع للوضع الليلي بذكاء مع الحفاظ على سرعة التصفح وراحة العين.</p>
-                <a href="https://greasyfork.org/scripts/576267/code/script.user.js" target="_blank" class="btn">تثبيت الآن</a>
+                <p class="card-desc">Smart eye protection for all websites while maintaining high speed and color accuracy.</p>
+                <a href="https://greasyfork.org/scripts/576267/code/script.user.js" target="_blank" class="btn">Install Now</a>
             </div>
         </div>
 
