@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohamed Fares | M.FARES Portfolio</title>
     <style>
-        /* التنسيقات الأساسية - Noir Vibe */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             background-color: #020617;
@@ -25,18 +24,17 @@
         }
         .logo { color: #06b6d4; font-weight: bold; font-size: 24px; text-decoration: none; letter-spacing: 2px; }
         
-        .hero { text-align: center; padding: 60px 0; }
-        .main-title { font-size: 3rem; margin-bottom: 15px; color: #fff; }
+        .hero { text-align: center; padding: 80px 0; }
+        .main-title { font-size: 3.5rem; margin-bottom: 15px; color: #fff; }
         .main-title span { color: #06b6d4; }
         .subtitle { color: #94a3b8; font-size: 1.1rem; max-width: 700px; margin: auto; }
         
-        /* إصلاح الجلري (Grid System) */
-        .section-header { margin: 40px 0 20px; border-right: 4px solid #06b6d4; padding-right: 15px; }
-        .section-header h2 { font-size: 1.8rem; color: #fff; }
+        .section-header { margin: 40px 0 30px; border-left: 4px solid #06b6d4; padding-left: 15px; text-align: left; }
+        .section-header h2 { font-size: 2rem; color: #fff; }
 
         .scripts-grid { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
             gap: 25px; 
             margin-top: 20px;
         }
@@ -44,62 +42,57 @@
         .script-card { 
             background: #0f172a; 
             border-radius: 15px; 
-            padding: 25px; 
+            padding: 30px; 
             border: 1px solid #1e293b; 
             position: relative; 
             transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            text-align: left;
         }
         .script-card:hover { 
             border-color: #06b6d4; 
             transform: translateY(-8px);
-            box-shadow: 0 10px 20px rgba(6, 182, 212, 0.1);
+            box-shadow: 0 10px 30px rgba(6, 182, 212, 0.15);
         }
         
-        /* العلامات التوضيحية */
         .status-badge { 
             display: inline-block;
             background: rgba(34, 197, 94, 0.1); 
             color: #22c55e; 
             padding: 4px 10px; 
             border-radius: 5px; 
-            font-size: 12px; 
+            font-size: 11px; 
             font-weight: bold;
             margin-bottom: 15px;
             width: fit-content;
+            text-transform: uppercase;
         }
         .status-updated { 
             background: rgba(6, 182, 212, 0.2); 
             color: #22d3ee; 
-            animation: blink 1.5s infinite;
         }
         
-        @keyframes blink {
-            0% { opacity: 1; }
-            50% { opacity: 0.6; }
-            100% { opacity: 1; }
-        }
-
-        .script-title { font-size: 1.4rem; color: #fff; margin-bottom: 8px; }
+        .script-title { font-size: 1.6rem; color: #fff; margin-bottom: 8px; }
         .script-ver { font-size: 0.85rem; color: #64748b; margin-bottom: 15px; }
-        .script-description { color: #94a3b8; font-size: 0.95rem; margin-bottom: 20px; flex-grow: 1; }
+        .script-description { color: #94a3b8; font-size: 0.95rem; margin-bottom: 25px; flex-grow: 1; }
         
         .install-btn { 
             display: block; 
             background: #06b6d4; 
             color: #000; 
             text-align: center; 
-            padding: 12px; 
-            border-radius: 8px; 
+            padding: 14px; 
+            border-radius: 10px; 
             text-decoration: none; 
             font-weight: bold; 
             transition: 0.2s; 
+            font-size: 15px;
         }
-        .install-btn:hover { background: #fff; }
+        .install-btn:hover { background: #fff; box-shadow: 0 0 15px #06b6d4; }
 
-        footer { text-align: center; margin-top: 80px; padding: 30px; color: #475569; border-top: 1px solid #1e293b; }
+        footer { text-align: center; margin-top: 100px; padding: 30px; color: #475569; border-top: 1px solid #1e293b; font-size: 0.8rem; }
     </style>
 </head>
 <body>
@@ -107,50 +100,50 @@
     <div class="container">
         <header>
             <a href="#" class="logo">M.FARES</a>
-            <div style="color: #64748b; font-size: 0.9rem;">Cybersecurity & Automation</div>
+            <div style="color: #64748b; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Automation & Security Specialist</div>
         </header>
 
         <section class="hero">
             <h1 class="main-title">Mohamed <span>Fares</span></h1>
-            <p class="subtitle">مطور أدوات ذكية ومختص في أتمتة الويب. هنا تجد أحدث السكريبتات المصممة لتحسين كفاءة التصفح وحماية الخصوصية.</p>
+            <p class="subtitle">Advanced automation tools and custom scripts repository. Focused on enhancing web performance and user experience via Tampermonkey.</p>
         </section>
 
-        <div class="section-header"><h2>معرض السكريبتات (V2.1)</h2></div>
+        <div class="section-header"><h2>Active Projects</h2></div>
         
         <div class="scripts-grid">
             <div class="script-card">
                 <div>
-                    <div class="status-badge status-updated">شغال - تحديث 2026</div>
+                    <div class="status-badge status-updated">Updated V2.1</div>
                     <h3 class="script-title">YouTube Ad-Skipper Pro</h3>
-                    <p class="script-ver">Version 2.1</p>
-                    <p class="script-description">تجاوز الإعلانات تلقائياً مع ميزة التسريع الفوري 16x للإعلانات غير القابلة للتخطي. محدث ليتوافق مع نظام يوتيوب الأخير.</p>
+                    <p class="script-ver">Last Update: May 2026</p>
+                    <p class="script-description">Auto-skips ads and speeds up unskippable segments by 16x. Undetectable and optimized for the latest YouTube updates.</p>
                 </div>
-                <a href="https://greasyfork.org/ar/scripts/YOUR_SCRIPT_LINK" class="install-btn">تحديث من GreasyFork</a>
+                <a href="https://greasyfork.org/ar/scripts/YOUR_SCRIPT_LINK" target="_blank" class="install-btn">Update Script</a>
             </div>
 
             <div class="script-card">
                 <div>
-                    <div class="status-badge">مستقر</div>
+                    <div class="status-badge">Stable</div>
                     <h3 class="script-title">Super Dark Mode Pro</h3>
                     <p class="script-ver">Version 1.0</p>
-                    <p class="script-description">تحويل جميع المواقع للوضع الليلي بشكل ذكي ومريح للعين مع الحفاظ على الألوان الأصلية للصور.</p>
+                    <p class="script-description">Eye protection for all websites with smart color inversion that preserves image quality and site speed.</p>
                 </div>
-                <a href="#" class="install-btn">تثبيت الآن</a>
+                <a href="#" class="install-btn">Install Now</a>
             </div>
 
             <div class="script-card">
                 <div>
-                    <div class="status-badge" style="color:#f59e0b; background:rgba(245,158,11,0.1)">قيد التطوير</div>
-                    <h3 class="script-title">Amazon Chime UI</h3>
-                    <p class="script-ver">Beta</p>
-                    <p class="script-description">أداة مخصصة لموظفي أمازون لتنظيم واجهة Chime وحذف الرسائل بصرياً لتوفير مساحة عمل أنظف.</p>
+                    <div class="status-badge" style="color:#f59e0b; background:rgba(245,158,11,0.1)">In Testing</div>
+                    <h3 class="script-title">Chime UI Purge</h3>
+                    <p class="script-ver">Beta Version</p>
+                    <p class="script-description">Custom tool for Amazon Chime to organize chat interfaces and visually clear messages for a cleaner workspace.</p>
                 </div>
-                <a href="#" class="install-btn" style="background:#1e293b; color:#475569;">قريباً</a>
+                <a href="#" class="install-btn">Download Beta</a>
             </div>
         </div>
 
         <footer>
-            M.FARES &copy; 2026 | مبرمج بواسطة محمد فارس
+            M.FARES &copy; 2026 | Built for Performance and Privacy
         </footer>
     </div>
 
