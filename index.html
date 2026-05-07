@@ -23,17 +23,47 @@
             padding-bottom: 20px;
         }
         .logo { color: #00bcd4; font-weight: bold; font-size: 22px; text-decoration: none; text-transform: uppercase; letter-spacing: 2px; }
-        .tagline { color: #8b949e; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
         
+        /* تأثير النبض الأخضر للحالة التشغيلية */
+        .status-pulse {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: #3fb950;
+            border-radius: 50%;
+            margin-left: 8px;
+            box-shadow: 0 0 0 rgba(63, 185, 80, 0.4);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(63, 185, 80, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(63, 185, 80, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(63, 185, 80, 0); }
+        }
+
         .hero { text-align: center; margin-bottom: 80px; }
         .main-title { font-size: 3.5rem; font-weight: bold; margin-bottom: 20px; color: #fff; }
         .main-title span { color: #00bcd4; }
-        .subtitle { color: #8b949e; font-size: 1.1rem; max-width: 700px; margin: auto; line-height: 1.8; }
-        
+
+        /* ستايل التيرمينال الجديد */
+        .terminal-box {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            color: #00bcd4;
+            text-align: left;
+            direction: ltr;
+            margin-bottom: 40px;
+            border-left: 4px solid #00bcd4;
+        }
+
         .section-title { 
             display: flex;
             align-items: center;
-            margin: 60px 0 30px;
+            margin: 40px 0 30px;
             font-size: 24px;
             font-weight: bold;
             border-right: 4px solid #00bcd4;
@@ -56,27 +86,13 @@
             flex-direction: column;
             transition: all 0.3s ease;
         }
-        .card:hover { 
-            border-color: #00bcd4; 
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 188, 212, 0.1);
-        }
+        .card:hover { border-color: #00bcd4; transform: translateY(-5px); }
         
-        .badge { 
-            display: inline-block;
-            background: rgba(0, 188, 212, 0.15); 
-            color: #00bcd4; 
-            padding: 4px 10px; 
-            border-radius: 5px; 
-            font-size: 11px; 
-            font-weight: bold;
-            margin-bottom: 15px;
-            width: fit-content;
-        }
+        .tech-tags { display: flex; gap: 8px; margin-bottom: 15px; }
+        .tag { font-size: 10px; background: #161b22; border: 1px solid #30363d; padding: 2px 6px; border-radius: 4px; color: #8b949e; }
 
-        .stats { font-size: 12px; color: #3fb950; margin-bottom: 10px; font-weight: bold; }
-        .card-title { font-size: 20px; color: #fff; margin-bottom: 12px; }
-        .card-desc { color: #8b949e; font-size: 14px; margin-bottom: 25px; flex-grow: 1; line-height: 1.6; }
+        .card-title { font-size: 20px; color: #fff; margin-bottom: 12px; display: flex; align-items: center; }
+        .card-desc { color: #8b949e; font-size: 14px; margin-bottom: 25px; flex-grow: 1; }
         
         .btn { 
             display: block; 
@@ -87,79 +103,75 @@
             border-radius: 8px; 
             text-decoration: none; 
             font-weight: bold; 
-            transition: 0.2s;
         }
         .btn:hover { background: #fff; box-shadow: 0 0 15px rgba(0, 188, 212, 0.5); }
-        
-        /* روابط سريعة للفوتر */
-        .quick-links { text-align: center; margin-top: 40px; }
-        .quick-links a { color: #00bcd4; text-decoration: none; margin: 0 15px; font-size: 14px; transition: 0.3s; }
-        .quick-links a:hover { color: #fff; }
 
-        footer { 
-            text-align: center; 
-            margin-top: 50px; 
-            padding: 30px; 
-            color: #484f58; 
-            font-size: 12px;
-            border-top: 1px solid #30363d;
-        }
+        footer { text-align: center; margin-top: 80px; padding: 30px; color: #484f58; font-size: 12px; border-top: 1px solid #30363d; }
     </style>
 </head>
 <body>
 
     <div class="container">
         <header>
-            <div class="tagline">Automation & Security Specialist</div>
+            <div style="color: #8b949e; font-size: 12px;">Security & Automation Console</div>
             <a href="#" class="logo">M.FARES</a>
         </header>
 
         <section class="hero">
             <h1 class="main-title">Mohamed <span>Fares</span></h1>
-            <p class="subtitle">مستودع أدوات الأتمتة المتقدمة. حلول ذكية لتجاوز القيود وتحسين تجربة المستخدم عبر Tampermonkey.</p>
+            <div class="terminal-box">
+                $ init m-fares-repository --status:active <br>
+                > Loading custom scripts... Done <br>
+                > Bypassing ad-protocols... Stable <br>
+                > User_Interface: Arabic/English Supported
+            </div>
         </section>
 
-        <div class="section-title">إعدادات التشغيل</div>
+        <div class="section-title">المشاريع النشطة</div>
+        
         <div class="scripts-grid">
             <div class="card">
-                <div class="badge">الخطوة 1</div>
-                <h3 class="card-title">تحميل Tampermonkey</h3>
-                <p class="card-desc">الإضافة الأساسية لتشغيل سكريبتات الأتمتة على متصفحك.</p>
-                <a href="https://www.tampermonkey.net/" target="_blank" class="btn">تحميل الإضافة</a>
-            </div>
-            <div class="card">
-                <div class="badge">الخطوة 2</div>
-                <h3 class="card-title">طريقة التثبيت</h3>
-                <p class="card-desc">بعد تثبيت الإضافة، اضغط على "تثبيت الآن" تحت أي مشروع بالأسفل، ثم أكد التثبيت في الصفحة التي ستفتح لك.</p>
-            </div>
-        </div>
-
-        <div class="section-title">مشاريع M.FARES الجارية</div>
-        <div class="scripts-grid">
-            <div class="card">
-                <div class="stats">● +1,700 Installs</div>
-                <div class="badge">Updated V2.1</div>
-                <h3 class="card-title">YouTube Ad-Skipper Pro</h3>
-                <p class="card-desc">تجاوز إعلانات يوتيوب تلقائياً مع تسريع الإعلانات غير القابلة للتخطي 16x. محدث بالكامل لعام 2026.</p>
+                <div class="tech-tags">
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">MutationObserver</span>
+                </div>
+                <h3 class="card-title">
+                    <span class="status-pulse"></span>
+                    YouTube Ad-Skipper Pro
+                </h3>
+                <p class="card-desc">تجاوز إعلانات يوتيوب تلقائياً مع تسريع 16x للإعلانات الإجبارية. مُختبر ضد أنظمة الحماية الجديدة.</p>
                 <a href="https://greasyfork.org/scripts/576160/code/script.user.js" target="_blank" class="btn">تثبيت السكريبت</a>
             </div>
+
             <div class="card">
-                <div class="stats">● Stable Version</div>
-                <div class="badge">Stable</div>
-                <h3 class="card-title">Super Dark Mode Pro</h3>
-                <p class="card-desc">تحويل جميع المواقع للوضع الليلي بشكل ذكي يحافظ على سرعة التصفح وراحة العين.</p>
+                <div class="tech-tags">
+                    <span class="tag">CSS-Injection</span>
+                    <span class="tag">UI/UX</span>
+                </div>
+                <h3 class="card-title">
+                    <span class="status-pulse"></span>
+                    Super Dark Mode Pro
+                </h3>
+                <p class="card-desc">تحويل جميع المواقع للوضع الليلي بذكاء مع الحفاظ على سرعة الاستجابة وراحة العين.</p>
                 <a href="https://greasyfork.org/scripts/576267/code/script.user.js" target="_blank" class="btn">تثبيت الآن</a>
             </div>
         </div>
 
-        <div class="quick-links">
-            <a href="https://facebook.com">Facebook</a>
-            <a href="https://github.com">GitHub</a>
-            <a href="mailto:contact@mfares.com">Report a Bug</a>
+        <div class="section-title">دليل التشغيل السريع</div>
+        <div class="scripts-grid">
+            <div class="card" style="padding: 20px;">
+                <h4 style="color: #fff; margin-bottom: 10px;">1. تحميل المحرك</h4>
+                <p style="font-size: 13px; color: #8b949e;">ثبت إضافة Tampermonkey لتشغيل الأكواد.</p>
+                <a href="https://www.tampermonkey.net/" style="color: #00bcd4; font-size: 13px; text-decoration: none; margin-top: 10px; display: block;">انقر للتحميل ←</a>
+            </div>
+            <div class="card" style="padding: 20px;">
+                <h4 style="color: #fff; margin-bottom: 10px;">2. التفعيل المباشر</h4>
+                <p style="font-size: 13px; color: #8b949e;">بعد التثبيت، السكريبت يعمل تلقائياً عند زيارة الموقع المستهدف.</p>
+            </div>
         </div>
 
         <footer>
-            M.FARES © 2026 | Developed for Professional Use
+            M.FARES &copy; 2026 | Secured Automation Repository
         </footer>
     </div>
 
