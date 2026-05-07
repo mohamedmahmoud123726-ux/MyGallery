@@ -3,175 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohamed Fares | M.FARES Portfolio</title>
+    <title>M.FARES | معرض السكريبتات</title>
     <style>
+        /* التنسيق الأساسي اللي كان في الصورة المنظمة */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             background-color: #010409;
             color: #f8fafc;
             font-family: 'Segoe UI', Tahoma, sans-serif;
-            padding: 40px 20px;
+            padding: 50px 20px;
         }
         .container { max-width: 1000px; margin: auto; }
         
+        /* الهيدر */
         header { 
             display: flex; 
             justify-content: space-between; 
             align-items: center; 
-            margin-bottom: 60px;
-            border-bottom: 1px solid #30363d;
-            padding-bottom: 20px;
+            margin-bottom: 80px;
         }
-        .logo { color: #00bcd4; font-weight: bold; font-size: 22px; text-decoration: none; text-transform: uppercase; letter-spacing: 2px; }
+        .logo { color: #00bcd4; font-weight: bold; font-size: 22px; text-decoration: none; text-transform: uppercase; }
+        .tagline { color: #8b949e; font-size: 11px; text-transform: uppercase; }
         
-        /* تأثير النبض الأخضر للحالة التشغيلية */
-        .status-pulse {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            background-color: #3fb950;
-            border-radius: 50%;
-            margin-left: 8px;
-            box-shadow: 0 0 0 rgba(63, 185, 80, 0.4);
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(63, 185, 80, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(63, 185, 80, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(63, 185, 80, 0); }
-        }
-
+        /* العنوان الرئيسي */
         .hero { text-align: center; margin-bottom: 80px; }
-        .main-title { font-size: 3.5rem; font-weight: bold; margin-bottom: 20px; color: #fff; }
+        .main-title { font-size: 3.5rem; font-weight: bold; margin-bottom: 20px; }
         .main-title span { color: #00bcd4; }
-
-        /* ستايل التيرمينال الجديد */
-        .terminal-box {
-            background: #0d1117;
-            border: 1px solid #30363d;
-            border-radius: 6px;
-            padding: 15px;
-            font-family: 'Courier New', monospace;
-            font-size: 13px;
-            color: #00bcd4;
-            text-align: left;
-            direction: ltr;
-            margin-bottom: 40px;
-            border-left: 4px solid #00bcd4;
-        }
-
+        .subtitle { color: #8b949e; font-size: 1.1rem; max-width: 700px; margin: auto; line-height: 1.6; }
+        
+        /* العناوين الجانبية المنظمة */
         .section-title { 
             display: flex;
             align-items: center;
-            margin: 40px 0 30px;
-            font-size: 24px;
+            margin-bottom: 30px;
+            font-size: 22px;
             font-weight: bold;
             border-right: 4px solid #00bcd4;
             padding-right: 15px;
             color: #fff;
         }
 
-        .scripts-grid { 
+        /* شبكة الكروت */
+        .grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 25px; 
+            gap: 20px; 
+            margin-bottom: 60px;
         }
         
+        /* تصميم الكارت النظيف (زي الصور اللي كانت عجباك) */
         .card { 
             background: #0d1117; 
             border-radius: 12px; 
             padding: 30px; 
             border: 1px solid #30363d; 
-            display: flex;
-            flex-direction: column;
-            transition: all 0.3s ease;
+            text-align: right;
+            transition: 0.3s;
         }
-        .card:hover { border-color: #00bcd4; transform: translateY(-5px); }
+        .card:hover { border-color: #00bcd4; }
         
-        .tech-tags { display: flex; gap: 8px; margin-bottom: 15px; }
-        .tag { font-size: 10px; background: #161b22; border: 1px solid #30363d; padding: 2px 6px; border-radius: 4px; color: #8b949e; }
+        .badge { 
+            background: rgba(0, 188, 212, 0.1); 
+            color: #00bcd4; 
+            padding: 4px 10px; 
+            border-radius: 4px; 
+            font-size: 10px; 
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
 
-        .card-title { font-size: 20px; color: #fff; margin-bottom: 12px; display: flex; align-items: center; }
-        .card-desc { color: #8b949e; font-size: 14px; margin-bottom: 25px; flex-grow: 1; }
+        .card-title { font-size: 20px; color: #fff; margin-bottom: 10px; }
+        .card-desc { color: #8b949e; font-size: 14px; margin-bottom: 25px; line-height: 1.6; min-height: 50px; }
         
+        /* الزرار الاحترافي */
         .btn { 
             display: block; 
             background: #00bcd4; 
-            color: #0d1117; 
+            color: #010409; 
             text-align: center; 
             padding: 12px; 
             border-radius: 8px; 
             text-decoration: none; 
             font-weight: bold; 
+            font-size: 15px;
         }
-        .btn:hover { background: #fff; box-shadow: 0 0 15px rgba(0, 188, 212, 0.5); }
+        .btn:hover { background: #fff; }
+        .btn-outline { background: transparent; border: 1px solid #30363d; color: #8b949e; }
+        .btn-outline:hover { border-color: #00bcd4; color: #00bcd4; }
 
-        footer { text-align: center; margin-top: 80px; padding: 30px; color: #484f58; font-size: 12px; border-top: 1px solid #30363d; }
+        footer { 
+            text-align: center; 
+            margin-top: 100px; 
+            padding: 20px; 
+            color: #484f58; 
+            font-size: 12px;
+            border-top: 1px solid #30363d;
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
         <header>
-            <div style="color: #8b949e; font-size: 12px;">Security & Automation Console</div>
+            <div class="tagline">Automation & Security Specialist</div>
             <a href="#" class="logo">M.FARES</a>
         </header>
 
         <section class="hero">
             <h1 class="main-title">Mohamed <span>Fares</span></h1>
-            <div class="terminal-box">
-                $ init m-fares-repository --status:active <br>
-                > Loading custom scripts... Done <br>
-                > Bypassing ad-protocols... Stable <br>
-                > User_Interface: Arabic/English Supported
-            </div>
+            <p class="subtitle">مستودع الأدوات الذكية المتقدمة. نركز على حل المشاكل البرمجية المعقدة وتحسين تجربة المستخدم عبر Tampermonkey.</p>
         </section>
 
-        <div class="section-title">المشاريع النشطة</div>
-        
-        <div class="scripts-grid">
+        <div class="section-title">دليل التشغيل السريع</div>
+        <div class="grid">
             <div class="card">
-                <div class="tech-tags">
-                    <span class="tag">JavaScript</span>
-                    <span class="tag">MutationObserver</span>
-                </div>
-                <h3 class="card-title">
-                    <span class="status-pulse"></span>
-                    YouTube Ad-Skipper Pro
-                </h3>
-                <p class="card-desc">تجاوز إعلانات يوتيوب تلقائياً مع تسريع 16x للإعلانات الإجبارية. مُختبر ضد أنظمة الحماية الجديدة.</p>
+                <div class="badge">الخطوة الأولى</div>
+                <h3 class="card-title">تحميل المحرك</h3>
+                <p class="card-desc">تحميل إضافة Tampermonkey لتشغيل الأكواد على متصفحك.</p>
+                <a href="https://www.tampermonkey.net/" target="_blank" class="btn btn-outline">انقر للتحميل ←</a>
+            </div>
+            <div class="card">
+                <div class="badge">الخطوة الثانية</div>
+                <h3 class="card-title">تفعيل السكريبت</h3>
+                <p class="card-desc">بعد تثبيت الإضافة، اختر السكريبت من الأسفل واضغط تثبيت ليعمل تلقائياً.</p>
+            </div>
+        </div>
+
+        <div class="section-title">المشاريع الجارية (Active Projects)</div>
+        <div class="grid">
+            <div class="card">
+                <div class="badge">UPDATED V2.1</div>
+                <h3 class="card-title">YouTube Ad-Skipper Pro</h3>
+                <p class="card-desc">تجاوز إعلانات يوتيوب تلقائياً مع تسريع الإعلانات غير القابلة للتخطي 16x. محدث بالكامل لعام 2026.</p>
                 <a href="https://greasyfork.org/scripts/576160/code/script.user.js" target="_blank" class="btn">تثبيت السكريبت</a>
             </div>
 
             <div class="card">
-                <div class="tech-tags">
-                    <span class="tag">CSS-Injection</span>
-                    <span class="tag">UI/UX</span>
-                </div>
-                <h3 class="card-title">
-                    <span class="status-pulse"></span>
-                    Super Dark Mode Pro
-                </h3>
-                <p class="card-desc">تحويل جميع المواقع للوضع الليلي بذكاء مع الحفاظ على سرعة الاستجابة وراحة العين.</p>
+                <div class="badge">STABLE</div>
+                <h3 class="card-title">Super Dark Mode Pro</h3>
+                <p class="card-desc">تحويل جميع المواقع للوضع الليلي بذكاء مع الحفاظ على سرعة التصفح وراحة العين.</p>
                 <a href="https://greasyfork.org/scripts/576267/code/script.user.js" target="_blank" class="btn">تثبيت الآن</a>
             </div>
         </div>
 
-        <div class="section-title">دليل التشغيل السريع</div>
-        <div class="scripts-grid">
-            <div class="card" style="padding: 20px;">
-                <h4 style="color: #fff; margin-bottom: 10px;">1. تحميل المحرك</h4>
-                <p style="font-size: 13px; color: #8b949e;">ثبت إضافة Tampermonkey لتشغيل الأكواد.</p>
-                <a href="https://www.tampermonkey.net/" style="color: #00bcd4; font-size: 13px; text-decoration: none; margin-top: 10px; display: block;">انقر للتحميل ←</a>
-            </div>
-            <div class="card" style="padding: 20px;">
-                <h4 style="color: #fff; margin-bottom: 10px;">2. التفعيل المباشر</h4>
-                <p style="font-size: 13px; color: #8b949e;">بعد التثبيت، السكريبت يعمل تلقائياً عند زيارة الموقع المستهدف.</p>
-            </div>
-        </div>
-
         <footer>
-            M.FARES &copy; 2026 | Secured Automation Repository
+            M.FARES © 2026 | Built for Performance and Privacy
         </footer>
     </div>
 
