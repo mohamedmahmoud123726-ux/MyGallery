@@ -5,43 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohamed Fares | M.FARES Portfolio</title>
     <style>
+        /* التنسيقات الأساسية - مستوحاة من Noir Vibe */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            background-color: #0f172a;
+            background-color: #020617;
             color: #f8fafc;
             font-family: 'Segoe UI', Tahoma, sans-serif;
             line-height: 1.6;
             padding: 20px;
         }
         .container { max-width: 1100px; margin: auto; padding: 20px; }
-        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
-        .logo { color: #38bdf8; font-weight: bold; font-size: 24px; text-decoration: none; }
-        .hero { text-align: center; padding: 60px 0; }
-        .main-title { font-size: 3rem; margin-bottom: 10px; }
-        .subtitle { color: #94a3b8; font-size: 1.1rem; max-width: 700px; margin: auto; }
-        .highlight { color: #38bdf8; font-weight: bold; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid #1e293b; }
+        .logo { color: #06b6d4; font-weight: bold; font-size: 24px; text-decoration: none; letter-spacing: 2px; }
+        .hero { text-align: center; padding: 80px 0; }
+        .main-title { font-size: 3.5rem; margin-bottom: 15px; color: #fff; }
+        .main-title span { color: #06b6d4; }
+        .subtitle { color: #94a3b8; font-size: 1.2rem; max-width: 750px; margin: auto; }
         
-        .section-header { margin: 60px 0 30px; border-right: 4px solid #38bdf8; padding-right: 15px; }
+        .section-header { margin: 60px 0 30px; border-right: 4px solid #06b6d4; padding-right: 15px; }
         .section-header h2 { font-size: 1.8rem; color: #fff; }
 
-        .scripts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
-        .script-card { background: #1e293b; border-radius: 16px; padding: 25px; border: 1px solid #334155; position: relative; text-align: right; }
-        .status-badge { position: absolute; top: 20px; left: 20px; background: rgba(56, 189, 248, 0.1); color: #38bdf8; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: bold; }
-        .status-dev { color: #f59e0b; background: rgba(245, 158, 11, 0.1); }
+        .scripts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px; }
+        .script-card { background: #0f172a; border-radius: 20px; padding: 30px; border: 1px solid #1e293b; position: relative; transition: 0.3s; }
+        .script-card:hover { border-color: #06b6d4; transform: translateY(-5px); }
         
-        .icon-container { width: 50px; height: 50px; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; border-radius: 12px; }
-        .icon-dark { background: rgba(187, 134, 252, 0.1); color: #bb86fc; }
-        .icon-yt { background: rgba(255, 0, 0, 0.1); color: #ff0000; }
-        .icon-ai { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+        .status-badge { position: absolute; top: 20px; left: 20px; background: rgba(34, 197, 94, 0.1); color: #22c55e; padding: 5px 12px; border-radius: 6px; font-size: 11px; font-weight: bold; }
+        .status-updated { background: rgba(6, 182, 212, 0.1); color: #06b6d4; animation: pulse 2s infinite; }
         
-        .script-title { font-size: 1.5rem; margin-bottom: 10px; }
-        .script-description { color: #94a3b8; font-size: 0.95rem; margin-bottom: 20px; height: 50px; }
-        .features-list { list-style: none; padding: 0; margin-bottom: 25px; }
-        .features-list li { margin-bottom: 8px; font-size: 0.9rem; color: #cbd5e1; }
-        .install-btn { display: block; width: 100%; background: #ffffff; color: #000000; text-align: center; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: bold; transition: 0.3s; }
-        .install-btn:hover { background: #38bdf8; color: white; }
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .script-title { font-size: 1.6rem; margin: 15px 0 10px; color: #f8fafc; }
+        .script-ver { font-size: 0.9rem; color: #64748b; margin-bottom: 15px; display: block; }
+        .script-description { color: #94a3b8; font-size: 1rem; margin-bottom: 25px; min-height: 50px; }
         
-        footer { text-align: center; margin-top: 100px; padding: 20px; color: #64748b; font-family: Arial, sans-serif; font-size: 0.9rem; }
+        .install-btn { display: block; width: 100%; background: #06b6d4; color: #000; text-align: center; padding: 14px; border-radius: 10px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        .install-btn:hover { background: #fff; }
+
+        footer { text-align: center; margin-top: 100px; padding: 40px; color: #475569; border-top: 1px solid #1e293b; font-size: 0.9rem; }
     </style>
 </head>
 <body>
@@ -49,84 +53,46 @@
     <div class="container">
         <header>
             <div class="logo">M.FARES</div>
-            <div style="background: rgba(56, 189, 248, 0.1); padding: 5px 15px; border-radius: 20px; font-size: 12px; color: #38bdf8;">Developer Portfolio</div>
+            <nav style="color: #94a3b8; font-size: 14px;">Automation & Security Specialist</nav>
         </header>
 
         <section class="hero">
-            <h1 class="main-title">Mohamed Fares</h1>
+            <h1 class="main-title">Mohamed <span>Fares</span></h1>
             <p class="subtitle">
-                مستودع الأدوات الذكية لتحسين الإنتاجية وتجربة المستخدم عبر إضافة <span class="highlight">Tampermonkey</span>.
+                مستودع الأدوات الذكية المتقدمة. نركز على حل المشاكل البرمجية المعقدة وتحسين تجربة المستخدم عبر <span style="color:#06b6d4">Tampermonkey</span>.
             </p>
         </section>
 
-        <div class="section-header"><h2>المشاريع الحالية (Active)</h2></div>
+        <div class="section-header"><h2>المشاريع الجارية (Active Projects)</h2></div>
         <div class="scripts-grid">
+            
             <div class="script-card">
-                <div class="status-badge">ACTIVE</div>
-                <div class="icon-container icon-yt">
-                    <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg>
-                </div>
+                <div class="status-badge status-updated">UPDATED V2.1</div>
                 <h3 class="script-title">YouTube Ad-Skipper Pro</h3>
-                <p class="script-description">تخطي آلي لجميع أنواع الإعلانات لضمان مشاهدة متواصلة بدون إزعاج.</p>
-                <ul class="features-list">
-                    <li>🔹 Instant Skip & Auto Close</li>
-                    <li>🔹 2026 Updates Ready</li>
-                    <li>🔹 Anti-Adblock Detection</li>
-                </ul>
-                <a href="https://greasyfork.org/en/scripts/576160-youtube-ad-skipper-pro-developed-by-mohamed-fares" target="_blank" class="install-btn">Install Script</a>
+                <span class="script-ver">آخر تحديث: مايو 2026</span>
+                <p class="script-description">تجاوز نظام يوتيوب الجديد كلياً. تخطي آلي، تسريع الإعلانات غير القابلة للتخطي 16x، وحماية من الاكتشاف.</p>
+                <a href="#" class="install-btn">تحديث السكريبت</a>
             </div>
 
             <div class="script-card">
-                <div class="status-badge">ACTIVE</div>
-                <div class="icon-container icon-dark">
-                    <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-                </div>
+                <div class="status-badge">STABLE</div>
                 <h3 class="script-title">Super Dark Mode Pro</h3>
-                <p class="script-description">تحويل ذكي لجميع المواقع إلى الوضع الليلي مع حماية متكاملة للعين.</p>
-                <ul class="features-list">
-                    <li>🔹 Smart Auto Dark Mode</li>
-                    <li>🔹 Image Inversion Protection</li>
-                    <li>🔹 Low Light Eye Protection</li>
-                </ul>
-                <a href="https://greasyfork.org/en/scripts/576267-super-dark-mode-pro" target="_blank" class="install-btn">Install Script</a>
-            </div>
-        </div>
-
-        <div class="section-header"><h2>خارطة طريق 2026 (Roadmap)</h2></div>
-        <div class="scripts-grid">
-            <div class="script-card">
-                <div class="status-badge status-dev">BETA 2026</div>
-                <div class="icon-container icon-ai">
-                    <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"></path><path d="M12 6v6l4 2"></path></svg>
-                </div>
-                <h3 class="script-title">AI-Cleanse Pro</h3>
-                <p class="script-description">تنظيف نتائج البحث من ملخصات الذكاء الاصطناعي المزعجة لاستعادة السرعة.</p>
-                <ul class="features-list">
-                    <li>🔸 Remove AI Overviews</li>
-                    <li>🔸 Restore Organic Results</li>
-                    <li>🔸 Zero Layout Shifts</li>
-                </ul>
-                <button class="install-btn" style="background:#334155; color:#94a3b8; cursor:not-allowed;">In Development</button>
+                <span class="script-ver">النسخة المستقرة</span>
+                <p class="script-description">حماية العين المتكاملة لجميع المواقع مع الحفاظ على سرعة تصفح عالية جداً.</p>
+                <a href="#" class="install-btn">تثبيت الآن</a>
             </div>
 
-            <div class="script-card">
-                <div class="status-badge status-dev">PLANNED</div>
-                <div class="icon-container" style="background:rgba(239, 68, 68, 0.1); color:#ef4444;">
-                    <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                </div>
-                <h3 class="script-title">Privacy Ghost Pro</h3>
-                <p class="script-description">تصفح خفي تماماً يمنع المواقع من التعرف على "بصمة المتصفح" الخاصة بك.</p>
-                <ul class="features-list">
-                    <li>🔸 Anti-Fingerprinting</li>
-                    <li>🔸 Stealth Agent Rotation</li>
-                    <li>🔸 Global Privacy Shield</li>
-                </ul>
-                <button class="install-btn" style="background:#334155; color:#94a3b8; cursor:not-allowed;">Coming Q3 2026</button>
+            <div class="script-card" style="opacity: 0.7;">
+                <div class="status-badge" style="background:rgba(245, 158, 11, 0.1); color:#f59e0b;">IN TESTING</div>
+                <h3 class="script-title">Chime UI Purge</h3>
+                <span class="script-ver">Beta Version</span>
+                <p class="script-description">أداة مخصصة لـ Amazon Chime لتنظيف واجهة المحادثات وتوفير مساحة عمل أفضل.</p>
+                <a href="#" class="install-btn" style="background:#1e293b; color:#64748b; cursor:not-allowed;">قريباً</a>
             </div>
         </div>
 
         <footer>
-            Developed by Mohamed Fares &copy; 2026 - All Rights Reserved
+            M.FARES &copy; 2026 | Built for Performance and Privacy
         </footer>
     </div>
 
