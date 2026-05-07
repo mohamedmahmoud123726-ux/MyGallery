@@ -1,97 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohamed Fares | M.FARES Portfolio</title>
     <style>
-        /* CSS Reset & Basics */
+        /* التنسيقات الأساسية - Noir Vibe */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            background-color: #010409; /* Dark background like your screenshots */
+            background-color: #010409; /* اللون الأسود بتاع صورك */
             color: #f8fafc;
             font-family: 'Segoe UI', Tahoma, sans-serif;
             padding: 40px 20px;
-            line-height: 1.6;
         }
         .container { max-width: 1000px; margin: auto; }
         
-        /* Header Section */
         header { 
             display: flex; 
             justify-content: space-between; 
             align-items: center; 
-            margin-bottom: 80px;
+            margin-bottom: 60px;
             border-bottom: 1px solid #30363d;
             padding-bottom: 20px;
         }
         .logo { color: #00bcd4; font-weight: bold; font-size: 22px; text-decoration: none; text-transform: uppercase; letter-spacing: 2px; }
-        .tagline { color: #8b949e; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+        .tagline { color: #8b949e; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
         
-        /* Hero Section */
-        .hero { text-align: center; margin-bottom: 100px; }
+        .hero { text-align: center; margin-bottom: 80px; }
         .main-title { font-size: 3.5rem; font-weight: bold; margin-bottom: 20px; color: #fff; }
         .main-title span { color: #00bcd4; }
-        .subtitle { color: #8b949e; font-size: 1.1rem; max-width: 650px; margin: auto; line-height: 1.6; }
+        .subtitle { color: #8b949e; font-size: 1.1rem; max-width: 700px; margin: auto; line-height: 1.8; }
         
-        /* Section Title */
         .section-title { 
             display: flex;
             align-items: center;
-            justify-content: flex-start;
-            margin-bottom: 40px;
+            margin: 60px 0 30px;
             font-size: 24px;
             font-weight: bold;
-            border-left: 4px solid #00bcd4;
-            padding-left: 15px;
+            border-right: 4px solid #00bcd4;
+            padding-right: 15px;
             color: #fff;
         }
 
-        /* Grid System */
         .scripts-grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
             gap: 25px; 
         }
         
-        /* Card Styling */
-        .script-card { 
+        .card { 
             background: #0d1117; 
             border-radius: 12px; 
-            padding: 35px; 
+            padding: 30px; 
             border: 1px solid #30363d; 
             display: flex;
             flex-direction: column;
-            text-align: left;
             transition: all 0.3s ease;
         }
-        .script-card:hover { 
+        .card:hover { 
             border-color: #00bcd4; 
-            transform: translateY(-8px);
+            transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(0, 188, 212, 0.1);
         }
         
-        /* Badges */
         .badge { 
             display: inline-block;
-            background: rgba(35, 134, 54, 0.15); 
-            color: #3fb950; 
+            background: rgba(0, 188, 212, 0.15); 
+            color: #00bcd4; 
             padding: 4px 10px; 
             border-radius: 5px; 
-            font-size: 10px; 
+            font-size: 11px; 
             font-weight: bold;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             width: fit-content;
-            text-transform: uppercase;
         }
-        .badge-cyan { background: rgba(0, 188, 212, 0.15); color: #00bcd4; }
-        .badge-orange { background: rgba(210, 153, 34, 0.15); color: #d29922; }
 
-        .script-title { font-size: 20px; color: #fff; margin-bottom: 8px; }
-        .script-ver { font-size: 12px; color: #6e7681; margin-bottom: 20px; }
-        .script-desc { color: #8b949e; font-size: 14px; margin-bottom: 30px; flex-grow: 1; }
+        .card-title { font-size: 20px; color: #fff; margin-bottom: 12px; }
+        .card-desc { color: #8b949e; font-size: 14px; margin-bottom: 25px; flex-grow: 1; line-height: 1.6; }
         
-        /* Buttons */
         .btn { 
             display: block; 
             background: #00bcd4; 
@@ -101,20 +87,17 @@
             border-radius: 8px; 
             text-decoration: none; 
             font-weight: bold; 
-            font-size: 15px;
-            transition: 0.2s ease;
+            transition: 0.2s;
         }
-        .btn:hover { 
-            background: #fff; 
-            box-shadow: 0 0 15px rgba(0, 188, 212, 0.5); 
-        }
-        .btn-dark { background: #21262d; color: #8b949e; cursor: default; }
+        .btn:hover { background: #fff; box-shadow: 0 0 15px rgba(0, 188, 212, 0.5); }
+        
+        .instruction-list { text-align: right; color: #8b949e; font-size: 14px; list-style: decimal inside; }
+        .instruction-list li { margin-bottom: 10px; }
 
-        /* Footer */
         footer { 
             text-align: center; 
-            margin-top: 100px; 
-            padding: 40px; 
+            margin-top: 80px; 
+            padding: 30px; 
             color: #484f58; 
             font-size: 12px;
             border-top: 1px solid #30363d;
@@ -125,40 +108,52 @@
 
     <div class="container">
         <header>
-            <a href="#" class="logo">M.FARES</a>
             <div class="tagline">Automation & Security Specialist</div>
+            <a href="#" class="logo">M.FARES</a>
         </header>
 
         <section class="hero">
             <h1 class="main-title">Mohamed <span>Fares</span></h1>
-            <p class="subtitle">Advanced automation tools and custom scripts repository. Focused on enhancing web performance and user experience via Tampermonkey.</p>
+            <p class="subtitle">
+                مستودع أدوات الأتمتة المتقدمة والسكريبتات المخصصة. نركز على تحسين أداء الويب وتجربة المستخدم عبر إضافة Tampermonkey.
+            </p>
         </section>
 
-        <div class="section-title">Active Projects</div>
+        <div class="section-title">إعدادات التشغيل (Setup)</div>
+        <div class="scripts-grid">
+            <div class="card">
+                <div class="badge">الخطوة 1</div>
+                <h3 class="card-title">تحميل Tampermonkey</h3>
+                <p class="card-desc">يجب تثبيت إضافة Tampermonkey على متصفحك أولاً لتتمكن من تشغيل أي سكريبت من هذا المعرض.</p>
+                <a href="https://www.tampermonkey.net/" target="_blank" class="btn">تحميل الإضافة الآن</a>
+            </div>
+
+            <div class="card">
+                <div class="badge">الخطوة 2</div>
+                <h3 class="card-title">طريقة الاستخدام</h3>
+                <ol class="instruction-list">
+                    <li>قم بتثبيت الإضافة من الكارت المجاور.</li>
+                    <li>اختر السكريبت المطلوب من قسم "المشاريع" بالأسفل.</li>
+                    <li>اضغط على زر التثبيت وسيتم تفعيل السكريبت تلقائياً.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="section-title">المشاريع الجارية (Active Projects)</div>
         
         <div class="scripts-grid">
-            <div class="script-card">
-                <div class="badge badge-cyan">Updated V2.1</div>
-                <h3 class="script-title">YouTube Ad-Skipper Pro</h3>
-                <p class="script-ver">Last Update: May 2026</p>
-                <p class="script-desc">Auto-skips ads and speeds up unskippable segments by 16x. Optimized for the latest security updates.</p>
-                <a href="https://greasyfork.org/scripts/576160/code/script.user.js" target="_blank" class="btn">Update Script</a>
+            <div class="card">
+                <div class="badge">Updated V2.1</div>
+                <h3 class="card-title">YouTube Ad-Skipper Pro</h3>
+                <p class="card-desc">تجاوز إعلانات يوتيوب تلقائياً مع ميزة التسريع 16x للإعلانات غير القابلة للتخطي. تم التحديث ليتوافق مع أنظمة 2026.</p>
+                <a href="https://greasyfork.org/scripts/576160/code/script.user.js" target="_blank" class="btn">تحديث السكريبت</a>
             </div>
 
-            <div class="script-card">
+            <div class="card">
                 <div class="badge">Stable</div>
-                <h3 class="script-title">Super Dark Mode Pro</h3>
-                <p class="script-ver">Version 1.0</p>
-                <p class="script-desc">Smart color inversion for all websites. Protects your eyes without sacrificing browsing speed.</p>
-                <a href="https://greasyfork.org/scripts/576267/code/script.user.js" target="_blank" class="btn">Install Now</a>
-            </div>
-
-            <div class="script-card">
-                <div class="badge badge-orange">In Testing</div>
-                <h3 class="script-title">Chime UI Purge</h3>
-                <p class="script-ver">Beta Version</p>
-                <p class="script-desc">Custom tool for Amazon Chime to organize chat interfaces and clean workspace clutter.</p>
-                <a href="#" class="btn btn-dark">Download Beta</a>
+                <h3 class="card-title">Super Dark Mode Pro</h3>
+                <p class="card-desc">حماية العين المتكاملة لجميع المواقع مع الحفاظ على سرعة التصفح ودقة الألوان الأصلية.</p>
+                <a href="https://greasyfork.org/scripts/576267/code/script.user.js" target="_blank" class="btn">تثبيت الآن</a>
             </div>
         </div>
 
